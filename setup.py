@@ -13,7 +13,7 @@ except:
 
 setup(
     name="compositor",
-    version="0.2b",
+    version="0.4b",
     description="A simple OpenType GSUB and GPOS engine.",
     author="Tal Leming",
     author_email="tal@typesupply.com",

@@ -1,4 +1,7 @@
-import unicodedata
+try: 
+    import unicodedata2 as unicodedata
+except ImportError: 
+    import unicodedata
 from compositor.cmap import reverseCMAP
 from compositor.caseConversionMaps import lowerToSingleUpper, upperToSingleLower, specialCasing, softDotted
 from compositor.wordBreakProperties import wordBreakProperties

@@ -2,7 +2,10 @@
 GSUB, GPOS and GDEF table objects.
 """
 
-import unicodedata
+try: 
+    import unicodedata2 as unicodedata
+except ImportError: 
+    import unicodedata
 from compositor.cmap import reverseCMAP
 from compositor.scriptList import ScriptList
 from compositor.featureList import FeatureList

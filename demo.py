@@ -1,6 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from AppKit import *
 from fontTools.pens.cocoaPen import CocoaPen
 from compositor import Font
+import sys
 
 # a simple function that implements path caching
 def getCachedNSBezierPath(glyph, font):
@@ -11,7 +14,7 @@ def getCachedNSBezierPath(glyph, font):
     return glyph.nsBezierPath
 
 # a path to a font
-fontPath = aPathToYourFont
+fontPath = sys.argv[1]
 
 # a path to save the image to
 imagePath = "demo.tiff"
@@ -21,9 +24,11 @@ font = Font(fontPath)
 
 # turn the aalt feature on so that we get any alternates
 font.setFeatureState("aalt", True)
+font.setFeatureState("liga", True)
+font.setFeatureState("dlig", True)
 
 # process some text
-glyphRecords = font.process(u"HERE IS SOME TEXT!")
+glyphRecords = font.process(u"Office flourishes!")
 
 # calculate the image size
 pointSize = 50.0

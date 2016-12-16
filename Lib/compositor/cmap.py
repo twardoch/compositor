@@ -4,7 +4,10 @@ and character mapping in general.
 """
 
 def extractCMAP(ttFont):
-    return ttFont["cmap"].getcmap(3, 1).cmap
+    cmap = ttFont["cmap"].getcmap(3, 10)
+    if not cmap:
+        cmap = ttCmap["cmap"].getcmap(3, 1)
+    return cmap.cmap
 
 def reverseCMAP(cmap):
     reversed = {}

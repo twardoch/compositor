@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 This script generates the caseConversionMaps.py and wordBreakProperties.py modules.
 It references the following Unicode files:
